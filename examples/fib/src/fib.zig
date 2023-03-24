@@ -10,7 +10,8 @@ pub fn main() !void {
     defer _ = gpa.deinit();
     const alloc = gpa.allocator();
 
-    const bytes = @embedFile("fib.wasm");
+    //const bytes = @embedFile("fib.wasm");
+    const bytes = @embedFile("c/fib.wasm");
 
     var store = Store.init(alloc);
     defer store.deinit();
